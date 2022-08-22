@@ -26,14 +26,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
       - run: yarn build
-
-
-jobs:
+  
   build:
     runs-on: ubuntu-latest
+    
     steps:
-    - uses: actions/checkout@v2
-    - name: Install modules
-      run: yarn
-    - name: Run ESLint
-      run: eslint . --ext .js,.jsx
+      - uses: actions/checkout@v3
+      - name: Install modules
+        run: 'yarn'
+      - name: Run ESLint
+        run: eslint . --ext .js,.jsx
